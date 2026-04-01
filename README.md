@@ -124,15 +124,6 @@ Recon Scan Tool now includes **passive cellular device detection**.
 - Passive exposure checks
 - Correlated risk findings
 
-## Web UI
-
-A lightweight FastAPI web UI is included for browsing scan history, findings, target results, and generated artifacts.
-
-Start it with:
-
-```bash
-uvicorn webapp.app:app --reload
-
 ---
 
 ## 🧪 Project Value
@@ -155,3 +146,16 @@ Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+
+```
+
+## Web UI
+
+A lightweight FastAPI web UI is included for browsing scan history, findings, target results, and generated artifacts.
+
+Start it with:
+
+```bash
+uvicorn webapp.app:app --reload
+
+```
