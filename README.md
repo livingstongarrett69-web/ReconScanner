@@ -1,7 +1,7 @@
 # Recon Scan Tool
 
 **Recon Scan Tool v1.0.0**  
-_Asynchronous Modular Reconnaissance Framework_
+_Asynchronous Modular Reconnaissance & Attack Surface Mapping Framework_
 
 Recon Scan Tool is a high-performance, modular reconnaissance framework for discovering network and web attack surfaces.
 
@@ -20,6 +20,8 @@ It combines:
 ## 🚀 Features
 
 ### Core Engine
+- Persistent scan state and resume capability
+- Scan-ID-based artifact naming
 - Async multi-target scanning
 - Stage-based pipeline execution
 - Dependency-aware module scheduling
@@ -48,6 +50,18 @@ It combines:
 ---
 
 ## 📡 Cellular Awareness (New)
+
+### Why it matters
+
+Cellular-connected devices are often:
+- externally exposed
+- weakly secured
+- overlooked in traditional recon
+
+This feature helps surface:
+- hidden attack surface
+- unmanaged network edges
+- shadow IT infrastructure
 
 Recon Scan Tool now includes **passive cellular device detection**.
 
@@ -111,6 +125,17 @@ Recon Scan Tool now includes **passive cellular device detection**.
 - Correlated risk findings
 
 ---
+
+## 🧪 Project Value
+
+This project demonstrates:
+
+- Offensive security tool design
+- Async systems architecture
+- Modular plugin frameworks
+- Real-world recon workflows
+- Data correlation and analysis
+- Attack surface mapping concepts
 
 ## ⚙️ Requirements
 
