@@ -1,31 +1,78 @@
 # Recon Scan Tool
 
-**Recon Scan Tool** is an asynchronous modular reconnaissance framework for network and web attack-surface discovery.
+**Recon Scan Tool v1.0.0**  
+_Asynchronous Modular Reconnaissance Framework_
+
+Recon Scan Tool is a high-performance, modular reconnaissance framework for discovering network and web attack surfaces.
 
 It combines:
-- staged async execution
+
+- async staged scanning
 - dependency-aware modules
-- live dashboard output
-- findings correlation
-- graph generation
-- report generation
-- scan persistence and history
+- live dashboard UI
+- structured findings pipeline
+- correlation engine
+- graph-based visualization
+- persistent scan history
 
-## Features
+---
 
+## 🚀 Features
+
+### Core Engine
 - Async multi-target scanning
-- Profiles: `fast`, `normal`, `deep`, `web`
+- Stage-based pipeline execution
 - Dependency-aware module scheduling
-- Live Rich dashboard
-- JSON, HTML, and Markdown reports
-- Graph export and browser graph viewer
-- SQLite scan history
-- Resume support
+- Scan profiles: `fast`, `normal`, `deep`, `web`, `cellular`
+- Resume interrupted scans
 - Module enable/disable filtering
-- Report index and scan history
-- Correlated risk findings
 
-## Included modules
+### Intelligence Layer
+- Structured findings system
+- Correlation engine (multi-signal risk detection)
+- Recent findings tracking
+- Severity classification (`info` → `critical`)
+
+### Output & Visualization
+- Live Rich dashboard (primary UI)
+- JSON, HTML, Markdown reports
+- Graph export (JSON)
+- Interactive graph viewer (HTML)
+- Graph summary reports
+
+### Persistence
+- SQLite scan database
+- Scan history index
+- Per-target result storage
+
+---
+
+## 📡 Cellular Awareness (New)
+
+Recon Scan Tool now includes **passive cellular device detection**.
+
+### Detects:
+- LTE / 4G / 5G routers
+- Mobile hotspots
+- Cellular gateways (CPE devices)
+- SIM/APN management interfaces
+- Cellular vendor fingerprints
+
+### Modules Added:
+- `cellular_detector` → identifies probable cellular devices
+- `modem_panel_finder` → detects modem/admin panels
+- `cellular_vendor_fingerprint` → identifies device vendor
+
+### Correlation Engine Enhancements:
+- Detects **cellular management exposure**
+- Combines signals across:
+  - HTTP responses
+  - panel detection
+  - vendor fingerprinting
+
+---
+
+## 🧩 Module Coverage
 
 ### Discovery
 - Host discovery
@@ -51,16 +98,21 @@ It combines:
 - Technology detection
 - Web crawling
 - Favicon hashing
+- Modem/admin panel detection
 
 ### Fingerprinting
 - OS fingerprinting
 - TLS probing
+- Cellular device detection
+- Cellular vendor fingerprinting
 
 ### Vulnerability / Exposure
 - Passive exposure checks
 - Correlated risk findings
 
-## Requirements
+---
+
+## ⚙️ Requirements
 
 - Python 3.10+
 - Recommended: virtual environment
