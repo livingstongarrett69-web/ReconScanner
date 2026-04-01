@@ -3,3 +3,6 @@ beautifulsoup4
 rich
 mmh3
 pytest
+fastapi
+uvicorn
+jinja2
