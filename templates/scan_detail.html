@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h1>Scan {{ scan.scan_id }}</h1>
+  <p class="muted">Profile: {{ scan.profile }} • Started: {{ scan.started_at }}</p>
+</div>
+
+<div class="grid">
+  <div class="stat"><strong>Targets</strong><br>{{ scan.targets_done }}/{{ scan.targets_total }}</div>
+  <div class="stat"><strong>Modules Run</strong><br>{{ scan.modules_run }}</div>
+  <div class="stat"><strong>Open Ports</strong><br>{{ scan.open_ports }}</div>
+  <div class="stat"><strong>Web Services</strong><br>{{ scan.web_services }}</div>
+  <div class="stat"><strong>Vulnerabilities</strong><br>{{ scan.vulnerabilities }}</div>
+  <div class="stat"><strong>Subdomains</strong><br>{{ scan.subdomains }}</div>
+  <div class="stat"><strong>Errors</strong><br>{{ scan.errors }}</div>
+  <div class="stat"><strong>Elapsed</strong><br>{{ scan.elapsed }}s</div>
+</div>
+
+<div class="card artifacts">
+  <h2>Artifacts</h2>
+  {% if artifacts.json_report %}<a href="/reports/{{ artifacts.json_report }}">JSON</a>{% endif %}
+  {% if artifacts.html_report %}<a href="/reports/{{ artifacts.html_report }}">HTML Report</a>{% endif %}
+  {% if artifacts.md_report %}<a href="/reports/{{ artifacts.md_report }}">Markdown</a>{% endif %}
+  {% if artifacts.graph_json %}<a href="/reports/{{ artifacts.graph_json }}">Graph JSON</a>{% endif %}
+  {% if artifacts.graph_html %}<a href="/reports/{{ artifacts.graph_html }}">Graph Viewer</a>{% endif %}
+</div>
+
+<div class="card">
+  <h2>Findings</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Severity</th>
+        <th>Category</th>
+        <th>Target</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for finding in findings %}
+      <tr>
+        <td>
+          <span class="sev sev-{{ finding.severity|lower }}">
+            {{ finding.severity }}
+          </span>
+        </td>
+        <td>{{ finding.category }}</td>
+        <td>{{ finding.target }}</td>
+        <td>{{ finding.summary }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Per-Target Results</h2>
+  {% for item in target_results %}
+    <details style="margin-bottom:1rem;">
+      <summary><strong>{{ item.target }}</strong></summary>
+      <pre>{{ item.result }}</pre>
+    </details>
+  {% endfor %}
+</div>
+{% endblock %}
