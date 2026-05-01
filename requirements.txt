@@ -1,3 +1,5 @@
+A list of required Python modules:
+
 aiohttp
 beautifulsoup4
 rich

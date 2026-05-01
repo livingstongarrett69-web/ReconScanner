@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 
 This release marks the first stable version of Recon Scan Tool.
 
+
 ---
 
 ### ⚙️ Core Engine
